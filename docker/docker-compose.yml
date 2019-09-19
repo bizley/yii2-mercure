@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mercure:
+    image: dunglas/mercure
+    environment:
+      - JWT_KEY=!UnsecureChangeMe!
+      - CORS_ALLOWED_ORIGINS=http://mercure.local
+      - DEBUG=1
+    networks:
+      - dev
+    labels:
+      - "traefik.ws.frontend.rule=Host:mercure.local"
+
+networks:
+  dev:
+    external:
+      name: dev

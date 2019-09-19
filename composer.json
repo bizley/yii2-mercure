@@ -1,0 +1,45 @@
+{
+  "name": "bizley/yii2-mercure",
+  "description": "Mercure Publisher for Yii 2.",
+  "type": "yii2-extension",
+  "keywords": ["yii2", "mercure", "broadcast"],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Pawel Bizley Brzozowski",
+      "email": "pawel@positive.codes"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/bizley/yii2-mercure"
+  },
+  "require": {
+    "php": ">=7.2.0",
+    "yiisoft/yii2": ">=2.0.13 <2.1.0",
+    "yiisoft/yii2-httpclient": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.3",
+    "roave/security-advisories": "dev-master"
+  },
+  "suggest": {
+    "yiisoft/yii2-httpclient": "^2.0",
+    "bizley/jwt": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "bizley\\yii2\\mercure\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "bizley\\tests\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

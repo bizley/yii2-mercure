@@ -1,0 +1,53 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Yii console bootstrap file.
+ *
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+
+$config = [
+    'id' => 'basic-console',
+    'basePath' => __DIR__,
+    'runtimePath' => __DIR__,
+    'vendorPath' => __DIR__ . '/..',
+    'bootstrap' => ['log'],
+    'controllerNamespace' => 'app\commands',
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+        '@tests' => '@app/tests',
+    ],
+    'components' => [
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+        'log' => [
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
+        'client' => yii\httpclient\Client::class,
+        'publisher' => [
+            'class' => bizley\yii2\mercure\Publisher::class,
+            'hubUrl' => 'http://mercure.local/hub',
+            'httpClient' => 'client',
+            'jwt' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InN1YnNjcmliZSI6WyIqIl0sInB1Ymxpc2giOlsiKiJdfX0.KH1Ne2xh7iK7tuYuaaV8AHJ8PitahE2b9hpFSEQjLIg',
+        ],
+    ],
+];
+
+$application = new yii\console\Application($config);
+$exitCode = $application->run();
+exit($exitCode);
