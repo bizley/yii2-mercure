@@ -33,6 +33,9 @@ Add the package to your `composer.json`:
 
 and run `composer update` or alternatively run `composer require bizley/yii2-mercure:^1.0`
 
+You will of course need Mercure Hub as well. Refer to [dunglas/mercure](https://github.com/dunglas/mercure) for the 
+instructions how to get one (I recommend using Docker image).
+
 Configuration
 -------------
 
@@ -145,7 +148,7 @@ Hub in a `Link` HTTP header.
 
     namespace app\controllers;
     
-    use yii\rest\Controller;
+    use yii\web\Controller;
     
     class BookController extends Controller
     {
