@@ -56,9 +56,10 @@ class PublisherTest extends TestCase
     public function shouldPublishWithClosureJwt(): void
     {
         $update = new Update('a', 'b');
-        $this->assertSame('closure', (new MockPublisher(['jwt' => function() {
+        $jwt = static function () {
             return 'closure';
-        }]))->publish($update));
+        };
+        $this->assertSame('closure', (new MockPublisher(['jwt' => $jwt]))->publish($update));
     }
 
     /**

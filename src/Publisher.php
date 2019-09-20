@@ -92,7 +92,9 @@ class Publisher extends Component
     public function sendRequest(array $postData, string $jwt = null): string
     {
         if (false === $this->useYii2Client) {
-            throw new RuntimeException('Publisher::sendRequest() method must be implemented first prior to using custom HTTP client.');
+            throw new RuntimeException(
+                'Publisher::sendRequest() method must be implemented first prior to using custom HTTP client.'
+            );
         }
 
         $headers = ['Content-Type' => 'application/x-www-form-urlencoded'];

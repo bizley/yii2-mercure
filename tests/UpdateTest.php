@@ -33,8 +33,14 @@ class UpdateTest extends TestCase
      * @param int|null $retry
      * @dataProvider dataProvider
      */
-    public function shouldReturnProperValues($topics, string $data, array $targets = [], string $id = null, string $type = null, int $retry = null): void
-    {
+    public function shouldReturnProperValues(
+        $topics,
+        string $data,
+        array $targets = [],
+        string $id = null,
+        string $type = null,
+        int $retry = null
+    ): void {
         $update = new Update($topics, $data, $targets, $id, $type, $retry);
 
         $this->assertSame((array)$topics, $update->getTopics());

@@ -243,8 +243,8 @@ Now the controller:
                 // set other appropriate JWT claims, such as an expiration date
                 ->set(
                     'mercure',
-                    ['subscribe' => ["http://example.com/user/$username"]] // could also include the security roles,
-                                                                           // or anything else
+                    ['subscribe' => ["http://example.com/user/$username"]]
+                    // could also include the security roles, or anything else
                 )
                 ->sign(new Sha256(), Yii::$app->jwt->key)
                 ->getToken();
