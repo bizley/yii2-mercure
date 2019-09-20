@@ -1,8 +1,8 @@
 # yii2-mercure
 
-![Latest Stable Version](https://img.shields.io/packagist/v/bizley/yii2-mercure.svg)
-[![Total Downloads](https://img.shields.io/packagist/dt/bizley/yii2-mercure.svg)](https://packagist.org/packages/bizley/yii2-mercure)
-![License](https://img.shields.io/packagist/l/bizley/yii2-mercure.svg)
+![Latest Stable Version](https://img.shields.io/packagist/v/bizley/yii2-mercure)
+[![Total Downloads](https://img.shields.io/packagist/dt/bizley/yii2-mercure)](https://packagist.org/packages/bizley/yii2-mercure)
+![License](https://img.shields.io/packagist/l/bizley/yii2-mercure)
 
 Mercure Publisher as Yii 2 component
 ------------------------------------
